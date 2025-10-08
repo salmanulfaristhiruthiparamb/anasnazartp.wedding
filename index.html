@@ -372,7 +372,7 @@
 
     <!-- Background Music -->
     <audio id="backgroundMusic" loop>
-        <source src="./fulfilling-humming.mp3" type="audio/mpeg">
+        <source src="./audio.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Music Control Button -->
@@ -562,7 +562,7 @@
                     <div class="space-y-3 text-center">
                         <p class="text-gray-600 text-lg sm:text-xl font-medium">Sunday, October 26, 2025</p>
                         <p class="text-gray-600 text-base sm:text-lg">10:00 AM</p>
-                        <p class="text-gray-500 text-sm sm:text-base mb-6">Islamic Center of Dearborn</p>
+                        <p class="text-gray-500 text-sm sm:text-base mb-6">Bride Home, Koduvally</p>
                         <button onclick="openMap('nikah')"
                             class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-full text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto">
                             <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -607,7 +607,7 @@
                     <div class="space-y-3 text-center">
                         <p class="text-gray-600 text-lg sm:text-xl font-medium">Monday, October 26, 2025</p>
                         <p class="text-gray-600 text-base sm:text-lg">5:00 PM - 9:00 PM</p>
-                        <p class="text-gray-500 text-sm sm:text-base mb-6">Grand Auditorium</p>
+                        <p class="text-gray-500 text-sm sm:text-base mb-6">Grand Auditorium, Kozhikode</p>
                         <button onclick="openMap('walima')"
                             class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-full text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto">
                             <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -857,18 +857,13 @@
 
         // Map function
         function openMap(location) {
-            let address = '';
-
             if (location === 'nikah') {
-                address = '789 Salaam Street, Dearborn, MI 48124';
+                const googleMapsUrl = 'https://maps.app.goo.gl/aGNHts3Amd5FrBGU8';
+                window.open(googleMapsUrl, '_blank', 'noopener,noreferrer');
             } else if (location === 'walima') {
-                address = '321 Community Drive, Dearborn Heights, MI 48127';
+                const googleMapsUrl = 'https://maps.app.goo.gl/xhooNxcpRxTyYCTi8';
+                window.open(googleMapsUrl, '_blank', 'noopener,noreferrer');
             }
-
-            const encodedAddress = encodeURIComponent(address);
-            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
-
-            window.open(googleMapsUrl, '_blank', 'noopener,noreferrer');
         }
 
 
