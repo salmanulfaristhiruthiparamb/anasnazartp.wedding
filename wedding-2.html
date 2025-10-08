@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anas Nazar T P & Sabeena K P - Nikah Ceremony</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes:wght@400&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            overflow: hidden;
+        }
+
+        .elegant-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .script-font {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: sparkle 20s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-60px) rotate(360deg);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-line {
+            position: relative;
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2, #f093fb);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #667eea, #f093fb);
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .ornament {
+            background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
+            position: relative;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .footer-gradient {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+        }
+
+        .confetti {
+            position: fixed;
+            top: -10px;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .confetti-piece {
+            width: 10px;
+            height: 10px;
+            background: #f39c12;
+            position: absolute;
+            animation: confetti-fall linear infinite;
+        }
+
+        .confetti-piece:nth-child(1) {
+            background: #e74c3c;
+            animation-duration: 3s;
+            animation-delay: 0s;
+            left: 10%;
+        }
+
+        .confetti-piece:nth-child(2) {
+            background: #3498db;
+            animation-duration: 2.5s;
+            animation-delay: 0.2s;
+            left: 20%;
+        }
+
+        .confetti-piece:nth-child(3) {
+            background: #2ecc71;
+            animation-duration: 3.5s;
+            animation-delay: 0.4s;
+            left: 30%;
+        }
+
+        .confetti-piece:nth-child(4) {
+            background: #f39c12;
+            animation-duration: 2.8s;
+            animation-delay: 0.6s;
+            left: 40%;
+        }
+
+        .confetti-piece:nth-child(5) {
+            background: #9b59b6;
+            animation-duration: 3.2s;
+            animation-delay: 0.8s;
+            left: 50%;
+        }
+
+        .confetti-piece:nth-child(6) {
+            background: #e67e22;
+            animation-duration: 2.7s;
+            animation-delay: 1s;
+            left: 60%;
+        }
+
+        .confetti-piece:nth-child(7) {
+            background: #1abc9c;
+            animation-duration: 3.1s;
+            animation-delay: 1.2s;
+            left: 70%;
+        }
+
+        .confetti-piece:nth-child(8) {
+            background: #e91e63;
+            animation-duration: 2.9s;
+            animation-delay: 1.4s;
+            left: 80%;
+        }
+
+        .confetti-piece:nth-child(9) {
+            background: #ff5722;
+            animation-duration: 3.3s;
+            animation-delay: 1.6s;
+            left: 90%;
+        }
+
+        .confetti-piece:nth-child(10) {
+            background: #673ab7;
+            animation-duration: 2.6s;
+            animation-delay: 1.8s;
+            left: 15%;
+        }
+
+        .confetti-piece:nth-child(11) {
+            background: #795548;
+            animation-duration: 3.4s;
+            animation-delay: 2s;
+            left: 25%;
+        }
+
+        .confetti-piece:nth-child(12) {
+            background: #607d8b;
+            animation-duration: 2.4s;
+            animation-delay: 2.2s;
+            left: 35%;
+        }
+
+        .confetti-piece:nth-child(13) {
+            background: #ffc107;
+            animation-duration: 3.6s;
+            animation-delay: 2.4s;
+            left: 45%;
+        }
+
+        .confetti-piece:nth-child(14) {
+            background: #4caf50;
+            animation-duration: 2.3s;
+            animation-delay: 2.6s;
+            left: 55%;
+        }
+
+        .confetti-piece:nth-child(15) {
+            background: #ff9800;
+            animation-duration: 3.7s;
+            animation-delay: 2.8s;
+            left: 65%;
+        }
+
+        .confetti-piece:nth-child(16) {
+            background: #8bc34a;
+            animation-duration: 2.2s;
+            animation-delay: 3s;
+            left: 75%;
+        }
+
+        .confetti-piece:nth-child(17) {
+            background: #cddc39;
+            animation-duration: 3.8s;
+            animation-delay: 3.2s;
+            left: 85%;
+        }
+
+        .confetti-piece:nth-child(18) {
+            background: #ffeb3b;
+            animation-duration: 2.1s;
+            animation-delay: 3.4s;
+            left: 95%;
+        }
+
+        .confetti-piece:nth-child(19) {
+            background: #03a9f4;
+            animation-duration: 3.9s;
+            animation-delay: 3.6s;
+            left: 5%;
+        }
+
+        .confetti-piece:nth-child(20) {
+            background: #00bcd4;
+            animation-duration: 2s;
+            animation-delay: 3.8s;
+            left: 12%;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .nav-btn.active {
+            color: #fbbf24 !important;
+            transform: scale(1.1);
+        }
+
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Confetti Animation -->
+    <div class="confetti" id="confetti">
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="./fulfilling-humming.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Control Button -->
+    <button id="musicToggle"
+        class="fixed top-4 right-4 z-50 bg-white/20 backdrop-blur-md border border-white/30 rounded-full p-3 text-white hover:bg-white/30 transition-all duration-300 shadow-lg">
+        <svg id="playIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+        </svg>
+        <svg id="pauseIcon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+        </svg>
+    </button>
+    <!-- Navigation Menu -->
+    <nav
+        class="fixed right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-50 bg-gray-900/80 backdrop-blur-md border border-gray-700/50 rounded-full px-2 sm:px-3 py-4 sm:py-6 shadow-lg">
+        <div class="flex flex-col space-y-3 sm:space-y-6">
+            <button onclick="navigateToSection('hero')"
+                class="nav-btn text-gray-300 hover:text-white transition-colors duration-300" data-section="hero">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+            </button>
+            <button onclick="navigateToSection('couple')"
+                class="nav-btn text-gray-300 hover:text-white transition-colors duration-300" data-section="couple">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-6h3v-5c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v5h3v6H4z" />
+                </svg>
+            </button>
+            <button onclick="navigateToSection('wedding')"
+                class="nav-btn text-gray-300 hover:text-white transition-colors duration-300" data-section="wedding">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L8 6v2H6v12h12V8h-2V6l-4-4zm0 2.83L14 7v1h-4V7l2-2.17zM8 10h8v8H8v-8z" />
+                    <circle cx="12" cy="14" r="2" />
+                </svg>
+            </button>
+            <button onclick="navigateToSection('reception')"
+                class="nav-btn text-gray-300 hover:text-white transition-colors duration-300" data-section="reception">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            </button>
+            <button onclick="navigateToSection('quote')"
+                class="nav-btn text-gray-300 hover:text-white transition-colors duration-300" data-section="quote">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                </svg>
+            </button>
+            <button onclick="navigateToSection('contact')"
+                class="nav-btn text-gray-300 hover:text-white transition-colors duration-300" data-section="contact">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+            </button>
+            <button onclick="navigateToSection('footer')"
+                class="nav-btn text-gray-300 hover:text-white transition-colors duration-300" data-section="footer">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div class="fade-up">
+                <div class="text-white/80 text-sm sm:text-lg mb-4 tracking-widest uppercase">بِسْمِ اللهِ الرَّحْمٰنِ
+                    الرَّحِيْمِ</div>
+                <div class="floating mb-6 sm:mb-8">
+                    <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-yellow-300" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                </div>
+                <h1 class="script-font text-5xl sm:text-7xl md:text-8xl text-white mb-4">Anas & Sabeena</h1>
+                <div
+                    class="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparent mx-auto mb-4 sm:mb-6">
+                </div>
+                <p class="elegant-serif text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 tracking-wider">Are Getting
+                    Married</p>
+                <div class="text-white/70 text-base sm:text-lg mb-6 sm:mb-8 px-4">October 26, 2025 • Koduvally,
+                    Kozhikode</div>
+
+                <!-- Countdown -->
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-xs sm:max-w-md mx-auto mb-8">
+                    <div class="countdown-box rounded-lg p-2 sm:p-4">
+                        <div class="text-lg sm:text-2xl font-bold text-white" id="days">00</div>
+                        <div class="text-xs text-white/70 uppercase tracking-wide">Days</div>
+                    </div>
+                    <div class="countdown-box rounded-lg p-2 sm:p-4">
+                        <div class="text-lg sm:text-2xl font-bold text-white" id="hours">00</div>
+                        <div class="text-xs text-white/70 uppercase tracking-wide">Hours</div>
+                    </div>
+                    <div class="countdown-box rounded-lg p-2 sm:p-4">
+                        <div class="text-lg sm:text-2xl font-bold text-white" id="minutes">00</div>
+                        <div class="text-xs text-white/70 uppercase tracking-wide">Minutes</div>
+                    </div>
+                    <div class="countdown-box rounded-lg p-2 sm:p-4">
+                        <div class="text-lg sm:text-2xl font-bold text-white" id="seconds">00</div>
+                        <div class="text-xs text-white/70 uppercase tracking-wide">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Section Button -->
+        <button onclick="navigateToSection('couple')"
+            class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 hover:text-white animate-bounce transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </button>
+    </section>
+
+    <!-- Couple Section -->
+    <section id="couple" class="min-h-screen flex items-center py-8 sm:py-20 ornament">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-16 fade-up">
+                <h2 class="elegant-serif text-3xl sm:text-4xl text-gray-800 mb-4">The Happy Couple</h2>
+                <div class="w-16 h-px bg-amber-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 max-w-4xl mx-auto">
+                <!-- Bride -->
+                <div class="text-center slide-left">
+                    <div
+                        class="w-32 h-32 sm:w-48 sm:h-48 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
+                        <svg class="w-16 h-16 sm:w-24 sm:h-24 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 6.5V7.5C15 8.3 14.3 9 13.5 9S12 8.3 12 7.5V6.5L9 7V9C9 10.1 8.1 11 7 11S5 10.1 5 9V7L3 7.5V9.5C3 10.3 3.7 11 4.5 11H6V22H8V16H10V22H12V16H14V22H16V11H19.5C20.3 11 21 10.3 21 9.5V9Z" />
+                        </svg>
+                    </div>
+                    <h3 class="script-font text-3xl sm:text-4xl text-gray-800 mb-2">Sabeena K P</h3>
+                    <p class="text-gray-600 mb-2 sm:mb-4 text-base sm:text-lg">The Bride</p>
+                    <p class="text-gray-500 text-sm">Daughter of Mohammed K P & Khadija Rahman</p>
+                </div>
+
+                <!-- Groom -->
+                <div class="text-center slide-right">
+                    <div
+                        class="w-32 h-32 sm:w-48 sm:h-48 mx-auto mb-4 sm:mb-6 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <svg class="w-16 h-16 sm:w-24 sm:h-24 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM16 8C16.6 8 17 8.4 17 9V14.5L15.5 13.5C15.1 13.2 14.6 13.2 14.2 13.5L12 15.2L9.8 13.5C9.4 13.2 8.9 13.2 8.5 13.5L7 14.5V9C7 8.4 7.4 8 8 8H16ZM8 6C6.3 6 5 7.3 5 9V16L8.5 18.5C9.3 19.1 10.4 19.1 11.2 18.5L12 18L12.8 18.5C13.6 19.1 14.7 19.1 15.5 18.5L19 16V9C19 7.3 17.7 6 16 6H8Z" />
+                        </svg>
+                    </div>
+                    <h3 class="script-font text-3xl sm:text-4xl text-gray-800 mb-2">Anas Nazar T P</h3>
+                    <p class="text-gray-600 mb-2 sm:mb-4 text-base sm:text-lg">The Groom</p>
+                    <p class="text-gray-500 text-sm">Son of Abdul Nazar T P & Saifunnessa M K</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Section Button -->
+        <button onclick="navigateToSection('wedding')"
+            class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-gray-600 hover:text-gray-800 animate-bounce transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </button>
+    </section>
+
+    <!-- Wedding Section -->
+    <section id="wedding" class="min-h-screen flex items-center py-8 sm:py-20 gradient-bg">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-16 fade-up">
+                <h2 class="elegant-serif text-3xl sm:text-4xl text-gray-800 mb-4">Nikah Ceremony</h2>
+                <div class="w-16 h-px bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4 sm:mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">Join us for the sacred union
+                    ceremony</p>
+            </div>
+
+            <div class="max-w-lg mx-auto fade-up">
+                <div class="bg-white rounded-lg p-6 sm:p-8 shadow-lg card-hover">
+                    <div class="text-amber-500 mb-6 text-center">
+                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L8 6v2H6v12h12V8h-2V6l-4-4zm0 2.83L14 7v1h-4V7l2-2.17zM8 10h8v8H8v-8z" />
+                            <circle cx="12" cy="14" r="2" />
+                        </svg>
+                    </div>
+                    <h3 class="elegant-serif text-2xl sm:text-3xl text-gray-800 mb-4 text-center">Nikah Ceremony</h3>
+                    <div class="space-y-3 text-center">
+                        <p class="text-gray-600 text-lg sm:text-xl font-medium">Sunday, October 26, 2025</p>
+                        <p class="text-gray-600 text-base sm:text-lg">10:00 AM</p>
+                        <p class="text-gray-500 text-sm sm:text-base mb-6">Islamic Center of Dearborn</p>
+                        <button onclick="openMap('nikah')"
+                            class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-full text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto">
+                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            View Location
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Section Button -->
+        <button onclick="navigateToSection('reception')"
+            class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-gray-600 hover:text-gray-800 animate-bounce transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </button>
+    </section>
+
+    <!-- Reception Section -->
+    <section id="reception" class="min-h-screen flex items-center py-8 sm:py-20 ornament">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-16 fade-up">
+                <h2 class="elegant-serif text-3xl sm:text-4xl text-gray-800 mb-4">Wedding Reception</h2>
+                <div class="w-16 h-px bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4 sm:mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">Celebrate with us at the reception
+                    dinner</p>
+            </div>
+
+            <div class="max-w-lg mx-auto fade-up">
+                <div class="bg-white rounded-lg p-6 sm:p-8 shadow-lg card-hover">
+                    <div class="text-purple-500 mb-6 text-center">
+                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="elegant-serif text-2xl sm:text-3xl text-gray-800 mb-4 text-center">Wedding Reception</h3>
+                    <div class="space-y-3 text-center">
+                        <p class="text-gray-600 text-lg sm:text-xl font-medium">Monday, October 26, 2025</p>
+                        <p class="text-gray-600 text-base sm:text-lg">5:00 PM - 9:00 PM</p>
+                        <p class="text-gray-500 text-sm sm:text-base mb-6">Grand Auditorium</p>
+                        <button onclick="openMap('walima')"
+                            class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-full text-sm sm:text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto">
+                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            View Location
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Section Button -->
+        <button onclick="navigateToSection('quote')"
+            class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-gray-600 hover:text-gray-800 animate-bounce transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </button>
+    </section>
+
+
+
+    <!-- Quote Section -->
+    <section id="quote" class="min-h-screen flex items-center py-8 sm:py-20 hero-bg relative">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div class="max-w-4xl mx-auto fade-up">
+                <div class="text-3xl sm:text-4xl mb-6 sm:mb-8">🤲</div>
+                <blockquote
+                    class="elegant-serif text-xl sm:text-2xl md:text-3xl text-white italic mb-4 sm:mb-6 leading-relaxed px-4">
+                    "Two souls with but a single thought, two hearts that beat as one. Today we celebrate not just a
+                    wedding, but the beautiful beginning of forever."
+                </blockquote>
+                <cite class="text-white/80 text-base sm:text-lg">- A Love Story Begins</cite>
+            </div>
+        </div>
+
+        <!-- Next Section Button -->
+        <button onclick="navigateToSection('contact')"
+            class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 hover:text-white animate-bounce transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </button>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen flex items-center py-8 sm:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-16 fade-up">
+                <h2 class="elegant-serif text-3xl sm:text-4xl text-gray-800 mb-4">Contact Us</h2>
+                <div class="w-16 h-px bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4 sm:mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">For any questions or special
+                    arrangements</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 justify-center">
+                <div class="text-center fade-up">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-gray-800 mb-2 text-base sm:text-lg">Bride's Family</h3>
+                    <p class="text-gray-600 text-sm sm:text-base"><a href="tel:9539906283">(+91) 9539906283</a></p>
+                </div>
+
+                <div class="text-center fade-up">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-gray-800 mb-2 text-base sm:text-lg">Groom's Family</h3>
+                    <p class="text-gray-600 text-sm sm:text-base"><a href="tel:919387522640">(+91) 9387522640</a></p>
+                    <p class="text-gray-600 text-sm sm:text-base"><a href="tel:919020124179">(+91) 9020124179</a></p>
+                    <p class="text-gray-600 text-sm sm:text-base"><a href="tel:918089055330">(+91) 8089055330</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Section Button -->
+        <button onclick="navigateToSection('footer')"
+            class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-gray-600 hover:text-gray-800 animate-bounce transition-colors duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="min-h-screen flex items-center py-8 sm:py-12 footer-gradient text-center">
+        <div class="container mx-auto px-4 sm:px-6 fade-up">
+            <div class="text-2xl sm:text-3xl mb-4">💍</div>
+            <p class="text-white text-base sm:text-lg mb-2 elegant-serif px-4">Barakallahu lakuma wa baraka alaikuma</p>
+            <p class="text-gray-400 text-sm px-4">May Allah bless you both and unite you in goodness</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Wedding date in IST (UTC+5:30)
+            const weddingDate = new Date('2025-10-26T16:30:00+05:30').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations and confetti
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.fade-up, .slide-left, .slide-right');
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Show confetti on page load
+            showConfetti();
+
+            // Hide confetti after 8 seconds
+            setTimeout(() => {
+                hideConfetti();
+            }, 8000);
+        });
+
+        // Confetti functions
+        function showConfetti() {
+            const confetti = document.getElementById('confetti');
+            confetti.style.display = 'block';
+        }
+
+        function hideConfetti() {
+            const confetti = document.getElementById('confetti');
+            confetti.style.display = 'none';
+        }
+
+        // Navigation functionality
+        let currentSection = 0;
+        const sections = ['hero', 'couple', 'wedding', 'reception', 'quote', 'contact', 'footer'];
+        let hasNavigated = false;
+        let audioStarted = false;
+
+        function navigateToSection(sectionId) {
+            // Start audio on first navigation
+            if (!hasNavigated && !audioStarted) {
+                hasNavigated = true;
+
+                if (!isPlaying) {
+                    startBackgroundMusic();
+                    isPlaying = true;
+                    playIcon.classList.add('hidden');
+                    pauseIcon.classList.remove('hidden');
+                    musicToggle.style.background = 'rgba(255, 255, 255, 0.4)';
+                    audioStarted = true;
+                }
+            }
+
+            // Hide all sections
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.style.display = 'none';
+                }
+            });
+
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'flex';
+
+                // Update active navigation button
+                updateActiveNavButton(sectionId);
+            }
+        }
+
+        function updateActiveNavButton(activeSection) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Add active class to current button
+            const activeBtn = document.querySelector(`[data-section="${activeSection}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+        }
+
+        // Initialize first section as active
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hide all sections except hero
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section && id !== 'hero') {
+                    section.style.display = 'none';
+                }
+            });
+
+            // Show hero section and set as active
+            const heroSection = document.getElementById('hero');
+            if (heroSection) {
+                heroSection.style.display = 'flex';
+            }
+
+            updateActiveNavButton('hero');
+        });
+
+        // Map function
+        function openMap(location) {
+            let address = '';
+
+            if (location === 'nikah') {
+                address = '789 Salaam Street, Dearborn, MI 48124';
+            } else if (location === 'walima') {
+                address = '321 Community Drive, Dearborn Heights, MI 48127';
+            }
+
+            const encodedAddress = encodeURIComponent(address);
+            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+
+            window.open(googleMapsUrl, '_blank', 'noopener,noreferrer');
+        }
+
+
+
+        // Music Control
+        const music = document.getElementById('backgroundMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+
+        let isPlaying = false;
+
+        // 🎬 Example: Some other action triggers music
+        function startBackgroundMusic() {
+            // Starts only if not already playing
+            if (!isPlaying) {
+                music.play().then(() => {
+                    isPlaying = true;
+                    playIcon.classList.add('hidden');
+                    pauseIcon.classList.remove('hidden');
+                    musicToggle.style.background = 'rgba(255, 255, 255, 0.4)';
+                }).catch(err => {
+                    console.warn("Playback failed (possibly user interaction required):", err);
+                });
+            }
+        }
+
+        // 🕹 Optional toggle button
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                music.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                musicToggle.style.background = 'rgba(255, 255, 255, 0.2)';
+            } else {
+                music.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                musicToggle.style.background = 'rgba(255, 255, 255, 0.4)';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'98af8bd4e26b17ac',t:'MTc1OTg2MjYyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
